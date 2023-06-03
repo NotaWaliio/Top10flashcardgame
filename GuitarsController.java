@@ -21,6 +21,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
+import javax.smartcardio.Card;
+
 /**
  * FXML Controller class
  *
@@ -54,22 +56,25 @@ public class GuitarsController implements Initializable {
     
     @FXML
     private void PrevCard(){
-        cardNo--;
-        while (cardNo == 0){
-            PrevCard.setDisable(true);
+        try {
+            cardNo--;
+            setCard();
+        } catch (Exception e) {
+            cardNo = 0;
+            setCard();
         }
-        setCard();
     }
     
     @FXML
     private void NextCard(){
-        cardNo++;
-        while (cardNo == GuitarCards.size()-1){
-            NextCard.setDisable(true);
+        try {
+            cardNo++;
+            setCard();
+        } catch (Exception e) {
+            cardNo = GuitarCards.size()-1;
+            setCard();
         }
-        setCard();
     }
-    
     @FXML
     private void FlipCard(){
         CardQ.setText("");
