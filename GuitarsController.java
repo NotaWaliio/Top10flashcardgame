@@ -34,10 +34,9 @@ public class GuitarsController implements Initializable {
     
     public int cardNo = 0;
 
-    @FXML
-    private Label CardQ, CardA;
-    private ImageView CardImg;
-    private Button FlipCard, PrevCard, NextCard, BackToCategories;
+    @FXML private Label CardQ, CardA;
+    @FXML private ImageView CardImg;
+    @FXML private Button FlipCard, PrevCard, NextCard, BackToCategories;
     
     @FXML
     private void BackToCategories(ActionEvent event) throws IOException{
@@ -52,6 +51,18 @@ public class GuitarsController implements Initializable {
     private void setCard(){
         CardQ.setText(GuitarCards.get(cardNo).getFront());
         CardA.setText("");
+        if (cardNo == GuitarCards.size()-1){
+            NextCard.setDisable(true);
+        }
+        else {
+            NextCard.setDisable(false);
+        }
+        if (cardNo == 0){
+            PrevCard.setDisable(true);
+        }
+        else {
+            PrevCard.setDisable(false);
+        }
     }
     
     @FXML
@@ -74,11 +85,16 @@ public class GuitarsController implements Initializable {
             cardNo = GuitarCards.size()-1;
             setCard();
         }
+
     }
     @FXML
     private void FlipCard(){
         CardQ.setText("");
         CardA.setText(GuitarCards.get(cardNo).getBack());
+
+        Image img = new Image(GuitarCards.get(cardNo).getImg());
+        CardImg.setImage(img);
+
     }
     
  
@@ -101,6 +117,8 @@ public class GuitarsController implements Initializable {
         GuitarCards.add(guitar3);
         GuitarCards.add(guitar4);
         GuitarCards.add(guitar5);
+
+        setCard();
         
 
         

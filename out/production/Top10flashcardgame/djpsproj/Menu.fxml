@@ -9,7 +9,7 @@
    <children>
       <ImageView fitHeight="274.0" fitWidth="432.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@349384151_239820245413499_6510593099517216866_n.png" />
+            <Image url="@Top10flashcardgame.png" />
          </image></ImageView>
       <Button mnemonicParsing="false" onAction="#handleButtonAction" text="Play game ;3" />
    </children>
