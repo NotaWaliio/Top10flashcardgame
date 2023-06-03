@@ -70,9 +70,11 @@ public class GuitarsController implements Initializable {
         try {
             cardNo--;
             setCard();
+            CardImg.setImage(null);
         } catch (Exception e) {
             cardNo = 0;
             setCard();
+            CardImg.setImage(null);
         }
     }
     
@@ -81,21 +83,23 @@ public class GuitarsController implements Initializable {
         try {
             cardNo++;
             setCard();
+            CardImg.setImage(null);
         } catch (Exception e) {
             cardNo = GuitarCards.size()-1;
             setCard();
+            CardImg.setImage(null);
         }
 
     }
     @FXML
-    private void FlipCard(){
+    private void FlipCard() {
         CardQ.setText("");
         CardA.setText(GuitarCards.get(cardNo).getBack());
 
-        Image img = new Image(GuitarCards.get(cardNo).getImg());
+        Image img = new Image(getClass().getResource(GuitarCards.get(cardNo).getImg()).toExternalForm());
         CardImg.setImage(img);
-
     }
+
     
  
     
