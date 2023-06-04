@@ -14,7 +14,7 @@
          <children>
             <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@350383645_194468249801539_8733505732800845053_n.png" />
+                  <Image url="@Chemistry.png" />
                </image>
                <HBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -37,7 +37,7 @@
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </HBox.margin>
                <image>
-                  <Image url="@aO71O6N_460s.jpg" />
+                  <Image url="@Guitars.jpg" />
                </image></ImageView>
          </children>
       </HBox>
@@ -48,7 +48,7 @@
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </HBox.margin>
                <image>
-                  <Image url="@8f5348afd6368d28f53c6301dd172fec_493x255-1491936404233.png" />
+                  <Image url="@English.png" />
                </image></ImageView>
             <Button fx:id="English" mnemonicParsing="false" onAction="#GoToScreen" onMouseClicked="#GoToScreen" prefHeight="51.0" prefWidth="203.0" text="English">
                <font>

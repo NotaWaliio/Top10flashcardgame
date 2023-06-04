@@ -34,7 +34,7 @@ public class GuitarsController implements Initializable {
     
     public int cardNo = 0;
 
-    @FXML private Label CardQ, CardA;
+    @FXML private Label CardQ, CardA, ForB;
     @FXML private ImageView CardImg;
     @FXML private Button FlipCard, PrevCard, NextCard, BackToCategories;
     
@@ -51,6 +51,9 @@ public class GuitarsController implements Initializable {
     private void setCard(){
         CardQ.setText(GuitarCards.get(cardNo).getFront());
         CardA.setText("");
+        CardImg.setImage(null);
+
+        ForB.setText("Question:");
         if (cardNo == GuitarCards.size()-1){
             NextCard.setDisable(true);
         }
@@ -93,11 +96,19 @@ public class GuitarsController implements Initializable {
     }
     @FXML
     private void FlipCard() {
-        CardQ.setText("");
-        CardA.setText(GuitarCards.get(cardNo).getBack());
 
-        Image img = new Image(getClass().getResource(GuitarCards.get(cardNo).getImg()).toExternalForm());
-        CardImg.setImage(img);
+        if (CardA.getText().equals("")) {
+            CardQ.setText("");
+            CardA.setText(GuitarCards.get(cardNo).getBack());
+
+            Image img = new Image(getClass().getResource(GuitarCards.get(cardNo).getImg()).toExternalForm());
+            CardImg.setImage(img);
+
+            ForB.setText("Answer:");
+        }
+        else {
+            setCard();
+        }
     }
 
     

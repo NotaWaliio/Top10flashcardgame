@@ -6,6 +6,7 @@ package djpsproj;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -14,7 +15,13 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+
+import javax.smartcardio.Card;
 
 /**
  * FXML Controller class
@@ -22,25 +29,118 @@ import javafx.stage.Stage;
  * @author Gus Guidotti
  */
 public class ChemistryController implements Initializable {
-    
+
+    ArrayList<Flashcard> ChemistryCards = new ArrayList<Flashcard>();
+
+    public int cardNo = 0;
+
+    @FXML private Label CardQ, CardA, ForB;
+    @FXML private ImageView CardImg;
+    @FXML private Button FlipCard, PrevCard, NextCard, BackToCategories;
+
     @FXML
-    private void BackToCategory(ActionEvent event) throws IOException {
-       Parent root = FXMLLoader.load(getClass().getResource("Category.fxml"));
-       Stage thisStage = (Stage)((Node)event.getSource()).getScene().getWindow();
-       Scene scene = new Scene(root);
-       thisStage.hide();
-       thisStage.setScene(scene);
-       thisStage.show();
-       
-      
+    private void BackToCategories(ActionEvent event) throws IOException{
+        Parent root = FXMLLoader.load(getClass().getResource("Category.fxml"));
+        Stage thisStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        thisStage.hide();
+        thisStage.setScene(scene);
+        thisStage.show();
+    }
+    @FXML
+    private void setCard(){
+
+        ForB.setText("Question:");
+
+        CardQ.setText(ChemistryCards.get(cardNo).getFront());
+        CardA.setText("");
+        CardImg.setImage(null);
+
+
+        if (cardNo == ChemistryCards.size()-1){
+            NextCard.setDisable(true);
+        }
+        else {
+            NextCard.setDisable(false);
+        }
+        if (cardNo == 0){
+            PrevCard.setDisable(true);
+        }
+        else {
+            PrevCard.setDisable(false);
+        }
     }
 
-    /**
-     * Initializes the controller class.
-     */
+    @FXML
+    private void PrevCard(){
+        try {
+            cardNo--;
+            setCard();
+            CardImg.setImage(null);
+        } catch (Exception e) {
+            cardNo = 0;
+            setCard();
+            CardImg.setImage(null);
+        }
+    }
+
+    @FXML
+    private void NextCard(){
+        try {
+            cardNo++;
+            setCard();
+            CardImg.setImage(null);
+        } catch (Exception e) {
+            cardNo = ChemistryCards.size()-1;
+            setCard();
+            CardImg.setImage(null);
+        }
+
+    }
+    @FXML
+    private void FlipCard() {
+
+        if (CardA.getText().equals("")) {
+            CardQ.setText("");
+            CardA.setText(ChemistryCards.get(cardNo).getBack());
+
+            Image img = new Image(getClass().getResource(ChemistryCards.get(cardNo).getImg()).toExternalForm());
+            CardImg.setImage(img);
+
+            ForB.setText("Answer:");
+        }
+        else {
+            setCard();
+        }
+    }
+
+
+
+
+
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
-    
+        // Create a new Flashcard instance
+        Flashcard chemistry1 = new Flashcard("What elements react violently with water?", "Alkali metals are also known to react violently and explosively with water. This is because enough heat is given off during the exothermic reaction to ignite the Hydrogen Gas.", "Alkali.png");
+        Flashcard chemistry2 = new Flashcard("How many protons and neutrons are in one gram of ordinary matter?","The Avogadro number is the approximate number of nucleons (protons and neutrons) in one gram of ordinary matter. The value of the Avogadro constant was chosen so that the mass of one mole of a chemical compound, expressed in grams, is approximately the number of nucleons in one constituent particle of the substance.","Avogadro.png");
+        Flashcard chemistry3= new Flashcard("This type of Hydrocarbon contains carbon-carbon double bonds.","Alkenes are a class of organic compounds that contain carbon-carbon double bonds. They are unsaturated hydrocarbons, meaning they have fewer hydrogen atoms than the corresponding saturated hydrocarbons (alkanes) with the same number of carbon atoms.","Alkenes.png");
+        Flashcard chemistry4= new Flashcard("","","");
+        Flashcard chemistry5= new Flashcard("","","");
+
+
+        // Add the Flashcard instance to the GuitarCards list
+        ChemistryCards.add(chemistry1);
+        ChemistryCards.add(chemistry2);
+        ChemistryCards.add(chemistry3);
+        ChemistryCards.add(chemistry4);
+        ChemistryCards.add(chemistry5);
+
+        setCard();
+
+
+
+
+
+    }
 }
