@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="djpsproj.EnglishController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="djpsproj.EnglishController">
     <children>
         <GridPane prefHeight="484.0" prefWidth="702.0" style="-fx-border-color: Black;">
             <columnConstraints>
@@ -44,6 +44,7 @@
                                             </font>
                                         </Label>
                                         <ImageView fx:id="CardImg" fitHeight="307.0" fitWidth="387.0" layoutX="10.0" layoutY="6.0" opacity="0.38" pickOnBounds="true" preserveRatio="true" />
+                              <Label fx:id="ForB" layoutX="44.0" layoutY="37.0" />
                                     </children>
                                 </AnchorPane>
                             </children>

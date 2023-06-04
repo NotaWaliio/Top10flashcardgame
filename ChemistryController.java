@@ -50,12 +50,10 @@ public class ChemistryController implements Initializable {
     @FXML
     private void setCard(){
 
-        ForB.setText("Question:");
-
         CardQ.setText(ChemistryCards.get(cardNo).getFront());
         CardA.setText("");
         CardImg.setImage(null);
-
+        ForB.setText("Question:");
 
         if (cardNo == ChemistryCards.size()-1){
             NextCard.setDisable(true);
@@ -121,6 +119,7 @@ public class ChemistryController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        ForB.setText("");
         // Create a new Flashcard instance
         Flashcard chemistry1 = new Flashcard("What elements react violently with water?", "Alkali metals are also known to react violently and explosively with water. This is because enough heat is given off during the exothermic reaction to ignite the Hydrogen Gas.", "Alkali.png");
         Flashcard chemistry2 = new Flashcard("How many protons and neutrons are in one gram of ordinary matter?","The Avogadro number is the approximate number of nucleons (protons and neutrons) in one gram of ordinary matter. The value of the Avogadro constant was chosen so that the mass of one mole of a chemical compound, expressed in grams, is approximately the number of nucleons in one constituent particle of the substance.","Avogadro.png");
