@@ -124,8 +124,8 @@ public class ChemistryController implements Initializable {
         Flashcard chemistry1 = new Flashcard("What elements react violently with water?", "Alkali metals are also known to react violently and explosively with water. This is because enough heat is given off during the exothermic reaction to ignite the Hydrogen Gas.", "Alkali.png");
         Flashcard chemistry2 = new Flashcard("How many protons and neutrons are in one gram of ordinary matter?","The Avogadro number is the approximate number of nucleons (protons and neutrons) in one gram of ordinary matter. The value of the Avogadro constant was chosen so that the mass of one mole of a chemical compound, expressed in grams, is approximately the number of nucleons in one constituent particle of the substance.","Avogadro.png");
         Flashcard chemistry3= new Flashcard("This type of Hydrocarbon contains carbon-carbon double bonds.","Alkenes are a class of organic compounds that contain carbon-carbon double bonds. They are unsaturated hydrocarbons, meaning they have fewer hydrogen atoms than the corresponding saturated hydrocarbons (alkanes) with the same number of carbon atoms.","Alkenes.png");
-        Flashcard chemistry4= new Flashcard("","","");
-        Flashcard chemistry5= new Flashcard("","","");
+        Flashcard chemistry4= new Flashcard("Which two elements change from a solid to a liquid at room temperature?","When set in room temperature, mercury and bromine both exist in the liquid state.","HgBr.jpg");
+        Flashcard chemistry5= new Flashcard("Who invented the Voltaic Cell?","The voltaic pile was invented by Alessandro Volta in the 1800s, the first electric battery. The invention is tied to Luigi Galvani's notorious experiments with frog legs.","VoltaicCell.png");
 
 
         // Add the Flashcard instance to the GuitarCards list

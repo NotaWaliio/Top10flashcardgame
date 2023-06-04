@@ -119,11 +119,11 @@ public class EnglishController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // Create a new Flashcard instance
-        Flashcard english1 = new Flashcard("", "", "");
-        Flashcard english2 = new Flashcard("", "", "");
-        Flashcard english3= new Flashcard("", "", "");
-        Flashcard english4= new Flashcard("", "", "");
-        Flashcard english5= new Flashcard("", "", "");
+        Flashcard english1 = new Flashcard("Who was the author of the short story \"Two Words?\"", "\"Two Words\" was written by south american writer Isabel Allende, published in 1989 under her collection, \"Cuentos de Eva Luna,\" or \"The Stories of Eva Luna.\"", "IsabelAllende.jpg");
+        Flashcard english2 = new Flashcard("Who pioneered the literary style of magic realism?", "Gabriel Garcia Marquez was a Nobel prize-winning Columbian writer and was one of the first to utilize the style of magic realism. ", "Marquez.png");
+        Flashcard english3= new Flashcard("Which of Gabriel Marquez's books are the most well-known?", "As a very accomplished writer, Gabriel Marquez has published a multitude of successful works, but of those, One Hundred Years of Solitude and Love in the Time of Cholera are his best-known novels.", "MarquezBooks.png");
+        Flashcard english4= new Flashcard("What is Pablo Neruda most known for?", "Some of Pablo Neruda's most famous works are collections of poems about love expressed through metaphors and images of nature.", "PabloNeruda.jpg");
+        Flashcard english5= new Flashcard("What themes does the novel \"Eva Luna\" by Isabel Allende follow?", "Isabel Allende explores the transformative power of words and stories in telling the story of the novel. Abuse of power and women's rights are also tackled in the book.", "EvaLuna.jpeg");
 
 
         // Add the Flashcard instance to the GuitarCards list
